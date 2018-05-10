@@ -74,7 +74,7 @@ function banking_civicrm_navigationMenu(&$params) {
       'child' => array(
           ($nav_id + 1) => array(
               'attributes' => array(
-                  'label' => ts('Dashboard'),
+                  'label' => ts('Dashboard', array('domain' => 'org.project60.banking')),
                   'name' => 'Dashboard',
                   'url' => 'civicrm/banking/dashboard',
                   'permission' => 'access CiviContribute',
@@ -88,7 +88,7 @@ function banking_civicrm_navigationMenu(&$params) {
           ),
           ($nav_id + 2) => array(
               'attributes' => array(
-                  'label' => ts('Show Transactions'),
+                  'label' => ts('Show Transactions', array('domain' => 'org.project60.banking')),
                   'name' => 'Transactions',
                   'url' => 'civicrm/banking/payments',
                   'permission' => 'access CiviContribute',
@@ -116,7 +116,7 @@ function banking_civicrm_navigationMenu(&$params) {
           ),
           ($nav_id + 4) => array(
               'attributes' => array(
-                  'label' => ts('Dedupe Accounts'),
+                  'label' => ts('Dedupe Accounts', array('domain' => 'org.project60.banking')),
                   'name' => 'Dedupe Accounts',
                   'url' => 'civicrm/banking/dedupe',
                   'permission' => 'access CiviContribute',
@@ -130,7 +130,7 @@ function banking_civicrm_navigationMenu(&$params) {
           ),
           ($nav_id + 5) => array(
               'attributes' => array(
-                  'label' => ts('Import Transactions'),
+                  'label' => ts('Import Transactions', array('domain' => 'org.project60.banking')),
                   'name' => 'Import Transactions',
                   'url' => 'civicrm/banking/import',
                   'permission' => 'access CiviContribute',
@@ -144,7 +144,7 @@ function banking_civicrm_navigationMenu(&$params) {
           ),
           ($nav_id + 6) => array(
               'attributes' => array(
-                  'label' => ts('Configuration Manager'),
+                  'label' => ts('Configuration Manager', array('domain' => 'org.project60.banking')),
                   'name' => 'CiviBanking Configuration',
                   'url' => 'civicrm/banking/manager',
                   'permission' => 'administer CiviCRM',
@@ -211,7 +211,7 @@ function banking_civicrm_tabs( &$tabs, $contactID ) {
   array_push($tabs, array(
     'id' =>       'bank_accounts',
     'url' =>      CRM_Utils_System::url('civicrm/banking/accounts_tab', "snippet=1&amp;cid=$contactID"),
-    'title' =>    ts("Bank Accounts"),
+    'title' =>    ts("Bank Accounts", array('domain' => 'org.project60.banking')),
     'weight' =>   95,
     'count' =>    $count_query->acCount));
 }
@@ -224,7 +224,7 @@ function banking_civicrm_merge ( $type, &$data, $mainId = NULL, $otherId = NULL,
     case 'relTables':
       // Offer user to merge bank accounts
       $data['rel_table_bankaccounts'] = array(
-          'title'  => ts('Bank Accounts'),
+          'title'  => ts('Bank Accounts', array('domain' => 'org.project60.banking')),
           'tables' => array('civicrm_bank_account'),
           'url'    => CRM_Utils_System::url('civicrm/contact/view', 'reset=1&cid=$cid&selectedChild=bank_accounts'),  // '$cid' will be automatically replaced
       );
